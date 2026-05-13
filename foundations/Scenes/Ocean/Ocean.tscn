@@ -1,3 +1,110 @@
 [gd_scene format=3 uid="uid://dme6rb7r3k85k"]
 
+[ext_resource type="Texture2D" uid="uid://c0w6mj1tt3jng" path="res://waves.png" id="1_t11xa"]
+[ext_resource type="Script" uid="uid://o1mpnu2dt751" path="res://Scenes/Ocean/Ocean.gd" id="1_y20wh"]
+[ext_resource type="Texture2D" uid="uid://b5vaih5wmt3sk" path="res://Assets/Plane/Plane0000.png" id="2_4wd1y"]
+[ext_resource type="Texture2D" uid="uid://r65rvb3n1e8p" path="res://Assets/Plane/Plane0001.png" id="3_qeolc"]
+[ext_resource type="Texture2D" uid="uid://k5rcrueyrjb" path="res://Assets/Plane/Plane0002.png" id="4_1ygjh"]
+[ext_resource type="Texture2D" uid="uid://bmmbf4jleqwe0" path="res://Assets/Hilcopper/frame0000.png" id="4_fyc3p"]
+[ext_resource type="Texture2D" uid="uid://64080xhs7wm0" path="res://Assets/Plane/Plane0003.png" id="5_o5t8f"]
+[ext_resource type="Script" uid="uid://c8aeaxs5p3eqi" path="res://Scenes/Ocean/plane_animated_2d.gd" id="7_4wd1y"]
+[ext_resource type="Texture2D" uid="uid://b0kfff88hc8gd" path="res://Assets/Hilcopper/frame0001.png" id="9_j3kjd"]
+[ext_resource type="Texture2D" uid="uid://bt0cw7j3t1tae" path="res://Assets/Hilcopper/frame0002.png" id="10_pldd8"]
+[ext_resource type="Texture2D" uid="uid://crvrkjnbi8hrl" path="res://Assets/Hilcopper/frame0003.png" id="11_5eu54"]
+[ext_resource type="Texture2D" uid="uid://dx25b8ihwk6l4" path="res://Assets/Hilcopper/frame0004.png" id="12_d8ff6"]
+[ext_resource type="Texture2D" uid="uid://u43bqc81n4mh" path="res://Assets/Hilcopper/frame0005.png" id="13_q3x1t"]
+[ext_resource type="Texture2D" uid="uid://fncgoey4xg14" path="res://Assets/Hilcopper/frame0006.png" id="14_nlosn"]
+[ext_resource type="Texture2D" uid="uid://v8h8j1epg4ot" path="res://Assets/Hilcopper/frame0007.png" id="15_jl0fg"]
+[ext_resource type="Texture2D" uid="uid://drx3impsw3hml" path="res://Assets/Hilcopper/frame0008.png" id="16_88bbu"]
+[ext_resource type="Texture2D" uid="uid://c70bcqs66hwlo" path="res://Assets/Hilcopper/frame0009.png" id="17_fqbm0"]
+[ext_resource type="Texture2D" uid="uid://fasba7inv6y3" path="res://Assets/Hilcopper/frame0010.png" id="18_0e6ud"]
+[ext_resource type="Texture2D" uid="uid://bks85btbmecs5" path="res://Assets/Hilcopper/frame0011.png" id="19_rkmw7"]
+[ext_resource type="Script" uid="uid://b0urb0ncam3go" path="res://Scenes/Ocean/hilcopper_animated_2d.gd" id="20_78tsg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qeolc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4wd1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qeolc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1ygjh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_o5t8f")
+}],
+"loop": true,
+"name": &"plane",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pdbfg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_fyc3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_j3kjd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pldd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5eu54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_d8ff6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_q3x1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_nlosn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_jl0fg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_88bbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_fqbm0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_0e6ud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_rkmw7")
+}],
+"loop": true,
+"name": &"spin",
+"speed": 8.0
+}]
+
 [node name="Ocean" type="Node2D" unique_id=678164067]
+script = ExtResource("1_y20wh")
+
+[node name="water2d" type="Sprite2D" parent="." unique_id=1969492461]
+position = Vector2(574, 325)
+scale = Vector2(0.30078125, 0.30046296)
+texture = ExtResource("1_t11xa")
+
+[node name="PlaneAnimated2d" type="AnimatedSprite2D" parent="." unique_id=22825262]
+position = Vector2(29, 273)
+rotation = 3.1479924
+scale = Vector2(0.28206307, 0.28206307)
+sprite_frames = SubResource("SpriteFrames_qeolc")
+animation = &"plane"
+script = ExtResource("7_4wd1y")
+
+[node name="HilcopperAnimated2d" type="AnimatedSprite2D" parent="." unique_id=998153001]
+position = Vector2(334, 44)
+rotation = 1.5707964
+scale = Vector2(-0.18177292, 0.14984599)
+sprite_frames = SubResource("SpriteFrames_pdbfg")
+animation = &"spin"
+script = ExtResource("20_78tsg")
