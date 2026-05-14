@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://fasba7inv6y3" path="res://Assets/Hilcopper/frame0010.png" id="18_0e6ud"]
 [ext_resource type="Texture2D" uid="uid://bks85btbmecs5" path="res://Assets/Hilcopper/frame0011.png" id="19_rkmw7"]
 [ext_resource type="Script" uid="uid://b0urb0ncam3go" path="res://Scenes/Ocean/hilcopper_animated_2d.gd" id="20_78tsg"]
+[ext_resource type="AudioStream" uid="uid://bfs1jatnayjp0" path="res://Assets/Sounds/eating.wav" id="21_pldd8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qeolc"]
 animations = [{
@@ -108,3 +109,6 @@ scale = Vector2(-0.18177292, 0.14984599)
 sprite_frames = SubResource("SpriteFrames_pdbfg")
 animation = &"spin"
 script = ExtResource("20_78tsg")
+
+[node name="Eatingsound" type="AudioStreamPlayer" parent="." unique_id=1806506988]
+stream = ExtResource("21_pldd8")

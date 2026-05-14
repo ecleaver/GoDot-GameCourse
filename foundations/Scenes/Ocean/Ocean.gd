@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var plane: AnimatedSprite2D = $PlaneAnimated2d
 @onready var hilcopper: AnimatedSprite2D = $HilcopperAnimated2d
+@onready var eatingsound: AudioStreamPlayer = $Eatingsound
 @onready var radius = 100
 @onready var angle = 0
 @onready var speed = 0.5
@@ -46,5 +47,9 @@ func _process(delta: float) -> void:
 		plane.rotate(-1.5 * delta)
 	elif Input.is_action_pressed("ui_right"):
 		plane.rotate(1.5 * delta)
-
+		
+	if Input.is_action_just_pressed("ui_accept"):
+		print("space")
+		eatingsound.play()
+		  
 	pass
