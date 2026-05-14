@@ -23,26 +23,24 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if (plane.position.x > 30 and plane.position.x < 1120 and plane.position.y > 30 and plane.position.y < 620):
 		plane.move_local_x(-100 * delta)
-	elif plane.position.x <= 30 :
+	elif plane.position.x <= 40 :
 		plane.position.x += 120 * delta
 		plane.rotate(180 * delta)
-	elif plane.position.x >= 1120:
+	elif plane.position.x >= 1100:
 		plane.position.x -= 120 * delta
 		plane.rotate(180 * delta)
 	elif plane.position.y <= 30:
 		plane.position.y += 120 * delta
 		plane.rotate(180 * delta)
-	elif plane.position.y >= 620:
+	elif plane.position.y >= 600:
 		plane.position.y -= 120 * delta
 		plane.rotate(180 * delta)
 		
-
+	"
+		Delta needs to be outside ofthe fuctnion and passed in
+	"
 	angle += speed * get_process_delta_time()
 	createCircle(hilcopper, radius, angle, pos_x, pos_y)
-	
-	
-	
-	
 	
 	if Input.is_action_pressed("ui_left"):
 		plane.rotate(-1.5 * delta)
