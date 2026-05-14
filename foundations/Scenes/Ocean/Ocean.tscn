@@ -16,31 +16,12 @@
 [ext_resource type="Texture2D" uid="uid://fncgoey4xg14" path="res://Assets/Hilcopper/frame0006.png" id="14_nlosn"]
 [ext_resource type="Texture2D" uid="uid://v8h8j1epg4ot" path="res://Assets/Hilcopper/frame0007.png" id="15_jl0fg"]
 [ext_resource type="Texture2D" uid="uid://drx3impsw3hml" path="res://Assets/Hilcopper/frame0008.png" id="16_88bbu"]
+[ext_resource type="Texture2D" uid="uid://i4ululpdf10x" path="res://Assets/Carrier.png" id="17_5eu54"]
 [ext_resource type="Texture2D" uid="uid://c70bcqs66hwlo" path="res://Assets/Hilcopper/frame0009.png" id="17_fqbm0"]
 [ext_resource type="Texture2D" uid="uid://fasba7inv6y3" path="res://Assets/Hilcopper/frame0010.png" id="18_0e6ud"]
 [ext_resource type="Texture2D" uid="uid://bks85btbmecs5" path="res://Assets/Hilcopper/frame0011.png" id="19_rkmw7"]
 [ext_resource type="Script" uid="uid://b0urb0ncam3go" path="res://Scenes/Ocean/hilcopper_animated_2d.gd" id="20_78tsg"]
 [ext_resource type="AudioStream" uid="uid://bfs1jatnayjp0" path="res://Assets/Sounds/eating.wav" id="21_pldd8"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_qeolc"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_4wd1y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_qeolc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_1ygjh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_o5t8f")
-}],
-"loop": true,
-"name": &"plane",
-"speed": 5.0
-}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pdbfg"]
 animations = [{
@@ -86,6 +67,26 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_qeolc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4wd1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qeolc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1ygjh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_o5t8f")
+}],
+"loop": true,
+"name": &"plane",
+"speed": 5.0
+}]
+
 [node name="Ocean" type="Node2D" unique_id=678164067]
 script = ExtResource("1_y20wh")
 
@@ -94,16 +95,8 @@ position = Vector2(574, 325)
 scale = Vector2(0.30078125, 0.30046296)
 texture = ExtResource("1_t11xa")
 
-[node name="PlaneAnimated2d" type="AnimatedSprite2D" parent="." unique_id=22825262]
-position = Vector2(66, 267)
-rotation = 3.1479924
-scale = Vector2(0.28206307, 0.28206307)
-sprite_frames = SubResource("SpriteFrames_qeolc")
-animation = &"plane"
-script = ExtResource("7_4wd1y")
-
 [node name="HilcopperAnimated2d" type="AnimatedSprite2D" parent="." unique_id=998153001]
-position = Vector2(625, 194)
+position = Vector2(352, 98.00001)
 rotation = 1.5707964
 scale = Vector2(-0.18177292, 0.14984599)
 sprite_frames = SubResource("SpriteFrames_pdbfg")
@@ -112,3 +105,19 @@ script = ExtResource("20_78tsg")
 
 [node name="Eatingsound" type="AudioStreamPlayer" parent="." unique_id=1806506988]
 stream = ExtResource("21_pldd8")
+
+[node name="Carrier" type="Sprite2D" parent="." unique_id=1753525612]
+position = Vector2(894.00006, 308)
+rotation = -0.3937725
+scale = Vector2(1, 0.952)
+texture = ExtResource("17_5eu54")
+
+[node name="PlaneAnimated2d" type="AnimatedSprite2D" parent="Carrier" unique_id=22825262]
+unique_name_in_owner = true
+position = Vector2(-161.72293, -43.71492)
+rotation = -2.7234807
+scale = Vector2(-0.3, -0.31)
+skew = -0.035276055
+sprite_frames = SubResource("SpriteFrames_qeolc")
+animation = &"plane"
+script = ExtResource("7_4wd1y")

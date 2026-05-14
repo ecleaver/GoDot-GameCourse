@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var plane: AnimatedSprite2D = $PlaneAnimated2d
+@onready var plane: AnimatedSprite2D = %PlaneAnimated2d
 @onready var hilcopper: AnimatedSprite2D = $HilcopperAnimated2d
 @onready var eatingsound: AudioStreamPlayer = $Eatingsound
 @onready var radius = 100
@@ -22,24 +22,24 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if (plane.position.x > 30 and plane.position.x < 1120 and plane.position.y > 30 and plane.position.y < 620):
-		plane.move_local_x(-100 * delta)
-	elif plane.position.x <= 40 :
-		plane.position.x += 120 * delta
+	if (plane.global_position.x > 30 and plane.global_position.x < 1120 and plane.global_position.y > 30 and plane.global_position.y < 620):
+		plane.move_local_x(-100 * delta, false)
+	elif plane.global_position.x <= 40 :
+		plane.global_position.x += 120 * delta
 		plane.rotate(180 * delta)
-	elif plane.position.x >= 1100:
-		plane.position.x -= 120 * delta
+	elif plane.global_position.x >= 1100:
+		plane.global_position.x -= 120 * delta
 		plane.rotate(180 * delta)
-	elif plane.position.y <= 30:
-		plane.position.y += 120 * delta
+	elif plane.global_position.y <= 30:
+		plane.global_position.y += 120 * delta
 		plane.rotate(180 * delta)
-	elif plane.position.y >= 600:
-		plane.position.y -= 120 * delta
+	elif plane.global_position.y >= 600:
+		plane.global_position.y -= 120 * delta
 		plane.rotate(180 * delta)
 		
-	"
-		Delta needs to be outside ofthe fuctnion and passed in
-	"
+	
+	#Delta needs to be outside of the fuctnion and passed in
+	
 	angle += speed * get_process_delta_time()
 	createCircle(hilcopper, radius, angle, pos_x, pos_y)
 	
@@ -49,7 +49,8 @@ func _process(delta: float) -> void:
 		plane.rotate(1.5 * delta)
 		
 	if Input.is_action_just_pressed("ui_accept"):
-		print("space")
-		eatingsound.play()
-		  
+		print("space") 
+		#eatingsound.play()
+		plane.global_position = Vector2(pos_x, pos_y)
+	
 	pass

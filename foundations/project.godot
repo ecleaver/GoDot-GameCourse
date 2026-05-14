@@ -15,6 +15,11 @@ run/main_scene="uid://dme6rb7r3k85k"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://Assets/icon.svg"
 
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="ignore"
+
 [dotnet]
 
 project/assembly_name="Foundations"
