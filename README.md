@@ -6,6 +6,10 @@ Trees, Scenes, Nodes
     * This tree makes up what is know as a Scene 
     * The whole setup is know as the game tree
     * Get tree gets the entire tree
+    * Drawn in the order they are put in the tree
+    * The top Node is draw first and the bottom Node is drawn last by default
+   
+
     
   *  Root
      * Their can only be one root
@@ -23,6 +27,19 @@ Trees, Scenes, Nodes
     * Allows for re-use
     * Create a instance of a enemy ship
     * The nodes under it are know as child nodes 
+    * Ordering: 
+      * To change the ordering on a node in godot:
+        1. Click on the node
+        2. Select Ordering under CanvasItem
+        3. Z index is relative 
+          *  If changed to -1 it will be drawn first
+          *  Press enter their and it will be drawn behind everything
+
+      * If a object is a parent a object that is a child is relative will be drawn after
+      
+      * Y sort
+        * Y sort enabled is mostly used in farming games.
+        * Y sort is enabled on the parent
     
   *  Scene
     * We build the scene that make up our game
@@ -125,4 +142,4 @@ Victors
     *  Vector2(pos_x[0], pos_y[0]).direction_to(Vector2(pos_x[1],pos_y[1]))
     *  This gets the difference between the two victors 
     *  The direction is the difference normalized
-    
+
