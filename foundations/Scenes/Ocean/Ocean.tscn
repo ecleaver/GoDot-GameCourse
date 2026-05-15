@@ -91,6 +91,7 @@ animations = [{
 script = ExtResource("1_y20wh")
 
 [node name="water2d" type="Sprite2D" parent="." unique_id=1969492461]
+z_index = -1
 position = Vector2(574, 325)
 scale = Vector2(0.30078125, 0.30046296)
 texture = ExtResource("1_t11xa")

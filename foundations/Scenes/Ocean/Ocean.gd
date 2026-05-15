@@ -5,7 +5,7 @@ extends Node2D
 @onready var eatingsound: AudioStreamPlayer = $Eatingsound
 @onready var radius = 100
 @onready var angle = 0
-@onready var speed = 1
+@onready var speed = .6
 @onready var pos_x = 500
 @onready var pos_y = 300
 @onready var positions = []
@@ -48,15 +48,15 @@ func planeInputs(sprit : AnimatedSprite2D, plane_rotate):
 		eatingsound.play()
 		#plane.global_position = Vector2(pos_x, pos_y)
 
-func moveToMouse(sprit1 : AnimatedSprite2D, move, speed):
+func moveToMouse(sprit1 : AnimatedSprite2D, move, speed = 1):
 	sprit1.look_at(get_global_mouse_position())
 	sprit1.move_local_x(-(speed * move))
 
 func moveTo(sprit1 : AnimatedSprite2D, sprit2 : AnimatedSprite2D, move, speed):
-	var direction: Vector2 = sprit1.position.direction_to(sprit2.position)
+	#var direction: Vector2 = sprit1.position.direction_to(sprit2.position)
 	sprit1.look_at(sprit2.position)
-	sprit1.translate(direction * speed * move)
-
+	sprit1.position += sprit1.transform.x * speed * move
+	#sprit1.translate(direction * speed * move)
 	pass
 
 # Called when the node enters the scene tree for the first time.
@@ -67,18 +67,20 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	#code is commited out for moving plane with gobal poition 
 	
 	move = 100 * delta
 	rotate = 180 * delta
 	plane_rotate = 1.5 * delta
+	#code used to move the plane with the mouse
 	moveToMouse(plane, move, speed)
+	
+	
 	#moveTo(plane, hilcopper, move, speed)
 	#hilcopper.position.y += 20 * delta
 	#gets the planes current potions 
 	
 	#put the code for moving the plane into a 
-	movePlane(plane, move, min_xy, max_x, max_y, rotate)
+	#movePlane(plane, move, min_xy, max_x, max_y, rotate)
 	#Delta needs to be outside of the fuctnion and passed in
 	
 	angle += speed * get_process_delta_time()
@@ -88,6 +90,4 @@ func _process(delta: float) -> void:
 	#a object for getting inputs 
 	#planeInputs(plane, plane_rotate)
 		
-	
-	
 	pass
