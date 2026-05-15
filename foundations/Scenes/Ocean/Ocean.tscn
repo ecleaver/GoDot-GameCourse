@@ -106,18 +106,18 @@ script = ExtResource("20_78tsg")
 [node name="Eatingsound" type="AudioStreamPlayer" parent="." unique_id=1806506988]
 stream = ExtResource("21_pldd8")
 
+[node name="PlaneAnimated2d" type="AnimatedSprite2D" parent="." unique_id=22825262]
+unique_name_in_owner = true
+position = Vector2(728.6868, 331.61743)
+rotation = 0.006388506
+scale = Vector2(0.29767394, 0.29724112)
+skew = 2.2292137e-05
+sprite_frames = SubResource("SpriteFrames_qeolc")
+animation = &"plane"
+script = ExtResource("7_4wd1y")
+
 [node name="Carrier" type="Sprite2D" parent="." unique_id=1753525612]
 position = Vector2(894.00006, 308)
 rotation = -0.3937725
 scale = Vector2(1, 0.952)
 texture = ExtResource("17_5eu54")
-
-[node name="PlaneAnimated2d" type="AnimatedSprite2D" parent="Carrier" unique_id=22825262]
-unique_name_in_owner = true
-position = Vector2(-161.72293, -43.71492)
-rotation = -2.7234807
-scale = Vector2(-0.3, -0.31)
-skew = -0.035276055
-sprite_frames = SubResource("SpriteFrames_qeolc")
-animation = &"plane"
-script = ExtResource("7_4wd1y")
