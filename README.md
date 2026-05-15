@@ -55,9 +55,6 @@ Child
   *  The position is always relative to the parent
   *  The transform is relative to the parent
 
-
-
-
 * Resources 
   * .wav files
   * collision shapes
@@ -100,3 +97,32 @@ Child
 *  move_local_scale
   *  setting move_local_x to false removes the gobal scaling affects 
 
+* Translate fucntions
+  *  The translate fuction can be used to move a object
+    *  Transform function uses a vector 2
+    *  item.translate(Vector2.RIGHT * value * delta)
+    *  You multiply by the value you want to move it by and the delta
+
+Victors
+* A Vector stores two numbers x, y
+* Each number is on a axis
+  *  Y is up or down
+  *  x is left or right
+  *  Object 1 is at point 1
+  *  Object 2 is at point 2
+  *  Help to understand the position, angle, direction, and distance
+    *  Gives us an understanding of the length or magnitude of the victor 
+      *  In godot the Code to get this is Vector length is (pos_x, pos_y).length()
+    *  The angle
+      *  To get it in godot Vector2(pos_x, pos_y).angle()
+  * Normalized
+    *  Normalized alters the values such as length is 1
+    *  Useful for use in moveing a object 
+    *  To do this in godot Vector2(8, 4).normalized()
+    *  To get it to move in a direction do vectorNormalized * speed * delta
+  *  Direction to
+    *  Direction to returns the normalized vector from one to another in godot
+    *  Vector2(pos_x[0], pos_y[0]).direction_to(Vector2(pos_x[1],pos_y[1]))
+    *  This gets the difference between the two victors 
+    *  The direction is the difference normalized
+    
