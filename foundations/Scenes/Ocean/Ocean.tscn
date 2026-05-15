@@ -96,7 +96,7 @@ scale = Vector2(0.30078125, 0.30046296)
 texture = ExtResource("1_t11xa")
 
 [node name="HilcopperAnimated2d" type="AnimatedSprite2D" parent="." unique_id=998153001]
-position = Vector2(352, 98.00001)
+position = Vector2(329, 154)
 rotation = 1.5707964
 scale = Vector2(-0.18177292, 0.14984599)
 sprite_frames = SubResource("SpriteFrames_pdbfg")
@@ -108,9 +108,9 @@ stream = ExtResource("21_pldd8")
 
 [node name="PlaneAnimated2d" type="AnimatedSprite2D" parent="." unique_id=22825262]
 unique_name_in_owner = true
-position = Vector2(728.6868, 331.61743)
+position = Vector2(607.0001, 342)
 rotation = 0.006388506
-scale = Vector2(0.29767394, 0.29724112)
+scale = Vector2(-0.447, -0.445)
 skew = 2.2292137e-05
 sprite_frames = SubResource("SpriteFrames_qeolc")
 animation = &"plane"
