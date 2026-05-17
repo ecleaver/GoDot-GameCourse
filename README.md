@@ -1,4 +1,4 @@
-# Notes
+# Foundation Notes
 
 
 Trees, Scenes, Nodes 
@@ -143,3 +143,48 @@ Victors
     *  This gets the difference between the two victors 
     *  The direction is the difference normalized
 
+Transform
+  * Represents the position, rotation and scale in 2d space
+  * Vector2 uses to values for x and y
+  * transfrom.y and transform.y are Vector 2s the represents the direction in the local node
+  * They repersent the rotation
+  
+# GDSprict Notes
+
+What is GDScrict
+  * A Scripting Language
+  * We write code in script
+  * It is this code that tells Godot what to do
+  * Godot works like python in that it needs to be indented by one tab
+  * The code put in the fucntion wouldd be know as a scope
+
+  * The print() function is used for displaying text
+
+Variable 
+  *  Are used to store usefull infomration
+  *  var
+    * the keyword to create veriables in godo is var 
+    * This istructs Godot to make a variable 
+    * variables in godot need to start with a lowercase, uppercase, or underscore "_"
+    * = is used to assigned new  values to variables
+    * var's can accept numbers, strings
+    * Type of var
+      *  print(type_string(typeof(var_name)))
+      *  You can change the type of var while the program is running by giving it a new value
+      *  type safty dose not exist in gdSprict
+    * Static Variables 
+      *  Godot has introduce static variables 
+      *  var itme : int = 10
+      *  After doing this it will give a error message when you try to change it to a different type over variable
+      * types of static vars
+        * int
+        * String
+        * float
+        * bool
+    * Constant
+      *  Decleared with const
+      *  Normally you would use all uppercase
+      *  You can right click in godot and select uppercase to change lowercase to uppercase.
+      *  You will get a error when assigning a const.  
+  *  Variable names can only be used once 
+  

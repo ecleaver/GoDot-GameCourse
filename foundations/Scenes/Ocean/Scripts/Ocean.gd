@@ -3,18 +3,18 @@ extends Node2D
 @onready var plane: AnimatedSprite2D = %PlaneAnimated2d
 @onready var hilcopper: AnimatedSprite2D = $HilcopperAnimated2d
 @onready var eatingsound: AudioStreamPlayer = $Eatingsound
-@onready var radius = 100
-@onready var angle = 0
-@onready var speed = .6
-@onready var pos_x = 500
-@onready var pos_y = 300
-@onready var positions = []
-@onready var move = 0
-@onready var max_x = 1100
-@onready var min_xy = 30
-@onready var max_y = 600
+@onready var radius : float = 100
+@onready var angle : float = 0
+@onready var speed : float = .6
+@onready var pos_x : float = 500
+@onready var pos_y : float = 300
+@onready var positions : Array = []
+@onready var move : float = 0
+const MAX_X : int = 1100
+const MIN_XY : int = 30
+const MAX_Y = 600
 @onready var rotate : float = 0
-@onready var plane_rotate = 0
+@onready var plane_rotate : float = 0
 
 func createCircle (sprit : AnimatedSprite2D, radius, angle, pos_x, pos_y):
 	var positions = [radius * cos(angle) + pos_x, radius * sin(angle) + pos_y]
@@ -80,7 +80,7 @@ func _process(delta: float) -> void:
 	#gets the planes current potions 
 	
 	#put the code for moving the plane into a 
-	#movePlane(plane, move, min_xy, max_x, max_y, rotate)
+	movePlane(plane, move, MIN_XY, MAX_X, MAX_Y, rotate)
 	#Delta needs to be outside of the fuctnion and passed in
 	
 	angle += speed * get_process_delta_time()
