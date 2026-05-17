@@ -187,4 +187,60 @@ Variable
       *  You can right click in godot and select uppercase to change lowercase to uppercase.
       *  You will get a error when assigning a const.  
   *  Variable names can only be used once 
+
+Operators
+  *  To look up information in godot on the symbol:
+    1.  Select the text
+    2.  right click
+    3.  Lookup Symbol
+  * Arithmetic operators 
+    * Addition Opeartor
+      *  + or +=
+    * Subtraction Operator 
+      *  - or -=
+    * Multiplication
+      * '*' or *=
+    * Divison 
+      * / or /=
+      * If you divied a int by another int the value will come back as a whole number and will not be rounded.
+      * If you divied it by a float you will not lose inforamtion
+    * Modulo Operator
+      * % 
+  * Comparison operators 
+    *  will return true or false 
+    * to test is equal to ==
+    * to test if not equal to !=
+    * to test is greater then >
+    * to test is greater then and equal >=
+    * to test if less then <
+    * to test is less then and equal <=
+    * for testing floats use  the is_equal_approx(value_1, value_2)
+  * logical operators
+    * and is for checking if 2 things are true
+    * or is to check if either thing is true
+    * can use not or !
+    * and can be &&
+    * or can be ||
+    * not can be !
   
+Control Flow
+  * if statements
+    *  if followed by a boolen that ends with a : 
+    *  elif is to do a related if statmant
+    *  else is to do some if all of the other statements fail to be true.
+  * loops
+    * while 
+      * to make a scope :
+      * put in what you want to test before the scope
+      * indent the text that will be run
+      * if it runs forever it will crash the program
+      * to leave early you type break
+      * continue goes up to the top of the loop
+    *  For loop
+      *  type for name in array_name :
+      *  then indent and type what you want to do in scope 
+      *  You can also do a range with a for loop
+        *  for name in range(value_1, value_2): 
+        *  then tell it what to do in scope.
+
+Arrays/Dictionary's 
