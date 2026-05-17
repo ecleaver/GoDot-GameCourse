@@ -9,18 +9,20 @@ extends Node2D
 @onready var pos_x : float = 500
 @onready var pos_y : float = 300
 @onready var move : float = 0
-const MAX_X : int = 1100
-const MIN_XY : int = 30
-const MAX_Y = 600
+enum ScreenPositions {
+	MAX_X = 1100,
+	MIN_XY = 30,
+	MAX_Y = 600
+}
 @onready var rotate : float = 0
 @onready var plane_rotate : float = 0
 
-func createCircle (sprit : AnimatedSprite2D, radius, angle, pos_x, pos_y):
+func createCircle (sprit : AnimatedSprite2D, radius, angle, pos_x, pos_y) -> void:
 	var positions : Array[float] = [radius * cos(angle) + pos_x, radius * sin(angle) + pos_y]
 	sprit.position.x = positions[0]
 	sprit.position.y = positions[1]
 	
-func movePlane(sprit : AnimatedSprite2D, move, min_xy, max_x, max_y, rotate):
+func movePlane(sprit : AnimatedSprite2D, move, min_xy, max_x, max_y, rotate) -> void:
 	if (sprit.global_position.x > min_xy and sprit.global_position.x < max_x and sprit.global_position.y > min_xy and sprit.global_position.y < max_y):
 		#setting move_local_x to false removes the gobal scaling affects 
 		sprit.move_local_x(-move)
@@ -36,7 +38,7 @@ func movePlane(sprit : AnimatedSprite2D, move, min_xy, max_x, max_y, rotate):
 	if (sprit.global_position.x <= min_xy or sprit.global_position.x >= max_x or sprit.global_position.y <= min_xy or sprit.global_position.y >= max_y):
 		sprit.rotate(rotate)
 
-func planeInputs(sprit : AnimatedSprite2D, plane_rotate):
+func planeInputs(sprit : AnimatedSprite2D, plane_rotate) -> void:
 	if Input.is_action_pressed("ui_left"):
 		sprit.rotate(-plane_rotate)
 	elif Input.is_action_pressed("ui_right"):
@@ -47,11 +49,11 @@ func planeInputs(sprit : AnimatedSprite2D, plane_rotate):
 		eatingsound.play()
 		#plane.global_position = Vector2(pos_x, pos_y)
 
-func moveToMouse(sprit1 : AnimatedSprite2D, move, speed = 1):
+func moveToMouse(sprit1 : AnimatedSprite2D, move, speed = 1) -> void:
 	sprit1.look_at(get_global_mouse_position())
 	sprit1.move_local_x(-(speed * move))
 
-func moveTo(sprit1 : AnimatedSprite2D, sprit2 : AnimatedSprite2D, move, speed):
+func moveTo(sprit1 : AnimatedSprite2D, sprit2 : AnimatedSprite2D, move, speed = 1) ->void:
 	#var direction: Vector2 = sprit1.position.direction_to(sprit2.position)
 	sprit1.look_at(sprit2.position)
 	sprit1.position += sprit1.transform.x * speed * move
@@ -62,24 +64,24 @@ func moveTo(sprit1 : AnimatedSprite2D, sprit2 : AnimatedSprite2D, move, speed):
 func _ready() -> void:
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
 	
 	move = 100 * delta
+	print("move %f" %move)
 	rotate = 180 * delta
 	plane_rotate = 1.5 * delta
 	#code used to move the plane with the mouse
-	moveToMouse(plane, move, speed)
+	#moveToMouse(plane, move, speed)
 	
 	
 	#moveTo(plane, hilcopper, move, speed)
-	#hilcopper.position.y += 20 * delta
+	hilcopper.position.y += 20 * delta
 	#gets the planes current potions 
 	
 	#put the code for moving the plane into a 
-	movePlane(plane, move, MIN_XY, MAX_X, MAX_Y, rotate)
+	movePlane(plane, move, ScreenPositions.MIN_XY, ScreenPositions.MAX_X, ScreenPositions.MAX_Y, rotate)
 	#Delta needs to be outside of the fuctnion and passed in
 	
 	angle += speed * get_process_delta_time()

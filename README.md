@@ -148,7 +148,29 @@ Methods(funcations)
   * Objects, Arrays, and Dictionary's are past by refernce
   * https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html#built-in-types
 
+Enums and Match
+  * Enum
+    * enum gives const a number
+    * enum numbers {ONE, TWO, THREE}
+    * enum are often used for states
+    * match can be used to check on a enum
+      * example: 
+      match race:
+        Race.RACE_NAME:
+         print("Race name")
+        Race.RACE_NAME_1, Race.NAME_2:
+         print('race found')
+      _:
+        print("Race not found")
+Strings
+  *  https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_format_string.html#
+  *  https://docs.godotengine.org/en/stable/classes/class_string.html#
+  *  to print a number "number: %.2f" %number
+  *  for multiple values item = "number %.2f number2 %d" % [number, number2]
+  
 
+
+    
 
 
 
