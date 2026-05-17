@@ -8,7 +8,6 @@ extends Node2D
 @onready var speed : float = .6
 @onready var pos_x : float = 500
 @onready var pos_y : float = 300
-@onready var positions : Array = []
 @onready var move : float = 0
 const MAX_X : int = 1100
 const MIN_XY : int = 30
@@ -17,7 +16,7 @@ const MAX_Y = 600
 @onready var plane_rotate : float = 0
 
 func createCircle (sprit : AnimatedSprite2D, radius, angle, pos_x, pos_y):
-	var positions = [radius * cos(angle) + pos_x, radius * sin(angle) + pos_y]
+	var positions : Array[float] = [radius * cos(angle) + pos_x, radius * sin(angle) + pos_y]
 	sprit.position.x = positions[0]
 	sprit.position.y = positions[1]
 	
