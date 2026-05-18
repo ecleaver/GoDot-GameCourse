@@ -91,7 +91,7 @@ animations = [{
 script = ExtResource("1_5eu54")
 
 [node name="Waves" type="Sprite2D" parent="." unique_id=852027759]
-position = Vector2(588.7779, 339.5)
+position = Vector2(580, 329)
 scale = Vector2(0.30231482, 0.30231482)
 texture = ExtResource("2_d8ff6")
 
