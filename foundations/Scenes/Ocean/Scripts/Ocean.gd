@@ -14,9 +14,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var planeMove : Movement = Movement.new(plane)
 	var hilcopperMove : Movement = Movement.new(hilcopper)
-	angle += hilcopperMove.speed * delta
+	angle += hilcopperMove.getSpeed() * delta
 	planeMove.getDelta(100 * delta, 180 * delta)	
-	planeMove.sprit_rotate = 1.5 * delta
+	
 	
 	#put the code for moving the plane into a 
 
@@ -24,11 +24,11 @@ func _process(delta: float) -> void:
 	#Delta needs to be outside of the fuctnion and passed in
 	# calls the function in the class movenment to make a circle 
 	
-	hilcopperMove.angle = angle
+	hilcopperMove.setAngle(angle)
 	hilcopperMove.createCircle()
 	
 	
-	planeMove.getMouse = get_global_mouse_position()
+	planeMove.setMouse(get_global_mouse_position())
 	# calls a function in the movement class to mouse the plane with the mouse
 	planeMove.moveToMouse()
 	
