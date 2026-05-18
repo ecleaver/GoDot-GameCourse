@@ -11,9 +11,9 @@ var getMouse = 0
 ## 
 var radius : float = 100
 ## angle needs to receive a value * delta
-var angle : float 
+var angle : float = 0
 ## used to chnage the planes speed
-var speed : float = 40
+var speed : float = .6
 ## update the x position of the circle 
 var pos_xCircle : float = 500
 ## update the y position of the cirle
@@ -35,16 +35,18 @@ func _init(p_sprit : AnimatedSprite2D) -> void:
 	sprit = p_sprit
 	pass
 
+func getAngle() -> void:
+	print(angle)
+
 func getDelta(p_move : float = 0, p_rotate : float = 0) -> void:
 	move = p_move
 	rotate = p_rotate
 	pass
 
 func createCircle () -> void:
-	
 	var positions : Array[float] = [radius * cos(angle) + pos_xCircle, radius * sin(angle) + pos_yCircle]
-	sprit.position.x = positions[0]
-	sprit.position.y = positions[1]
+	sprit.global_position.x = positions[0]
+	sprit.global_position.y = positions[1]
 
 	
 	
