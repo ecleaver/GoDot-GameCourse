@@ -11,8 +11,20 @@ config_version=5
 [application]
 
 config/name="Godot Essentials"
+run/main_scene="uid://dn7jtu88dg0q4"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
+run/script_name_casing=0
+run/scene_name_casing=2
+
+[display]
+
+window/stretch/mode="canvas_items"
+
+[editor]
+
+naming/scene_name_casing=1
+naming/script_name_casing=1
 
 [physics]
 

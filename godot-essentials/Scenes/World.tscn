@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dn7jtu88dg0q4"]
+
+[ext_resource type="Texture2D" uid="uid://qtp45vwqvb" path="res://Assets/Background.png" id="1_5cjrv"]
+[ext_resource type="PackedScene" uid="uid://pcg1ilgxlt3x" path="res://Scenes/Hobbit/Hobbit.tscn" id="2_j0p05"]
+[ext_resource type="PackedScene" uid="uid://dp3005n0bjqao" path="res://Scenes/Wizard/Wizard.tscn" id="3_5nsto"]
+[ext_resource type="PackedScene" uid="uid://bidga6jckftns" path="res://Scenes/Monster/Monster.tscn" id="4_gjpho"]
+
+[node name="World" type="Node" unique_id=1617680634]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=325979046]
+position = Vector2(575.22235, 325.25006)
+scale = Vector2(0.29976854, 0.29976854)
+texture = ExtResource("1_5cjrv")
+
+[node name="Wizard" parent="." unique_id=1118751146 instance=ExtResource("3_5nsto")]
+position = Vector2(96, 528)
+
+[node name="Monster" parent="." unique_id=155373793 instance=ExtResource("4_gjpho")]
+position = Vector2(984, 516)
+
+[node name="Hobbit2" parent="." unique_id=1861811547 instance=ExtResource("2_j0p05")]
+position = Vector2(322, 506)
+
+[node name="Hobbit" parent="." unique_id=369723120 instance=ExtResource("2_j0p05")]
