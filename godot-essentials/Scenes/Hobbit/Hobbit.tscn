@@ -11,3 +11,9 @@ script = ExtResource("1_dor42")
 position = Vector2(9.536743e-07, 1)
 scale = Vector2(0.37890625, 0.27734366)
 texture = ExtResource("1_y5jml")
+
+[node name="HideTimer" type="Timer" parent="." unique_id=351276111]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="HideTimer" to="." method="_on_hide_timer_timeout"]

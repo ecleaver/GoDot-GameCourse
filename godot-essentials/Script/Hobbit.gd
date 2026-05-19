@@ -1,20 +1,27 @@
 class_name Hobbit
 extends Node2D
+@onready var hide_timer: Timer = $HideTimer
+@export var hide_time: float = 2.0
+signal hit_monster
 
-var process_frames: int = 0
-var physics_frames: int = 0
-
-func ready() ->void:
+func _ready() ->void:
+	print("testing code")
+	hide_timer.start(hide_time)
 	pass
 	
 func _process(delta: float) -> void:
-	rotate(3 * delta)
-	process_frames += 1
-	print("Process %d" %process_frames)
-
-func _physics_process(delta: float) -> void:
-	physics_frames += 1
-	
-	print("Physics Process %d" %physics_frames)
+	rotate(PI * delta)
 	pass
 	
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("hit_wizarrd"):
+		hit_monster.emit()
+		pass
+
+	
+
+func _on_hide_timer_timeout() -> void:
+	rotate(0)
+	print("test hide timer")
+	hide()
+	pass # Replace with function body.

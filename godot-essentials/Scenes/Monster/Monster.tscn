@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://bidga6jckftns"]
 
+[ext_resource type="Script" uid="uid://4cad4m8eaa0k" path="res://Scenes/Monster/Monster.gd" id="1_5kmi8"]
 [ext_resource type="Texture2D" uid="uid://cqxw8xqc7fhbb" path="res://Assets/monster 1.png" id="1_o74e3"]
 
 [node name="Monster" type="Node2D" unique_id=155373793]
 position = Vector2(946, 520)
+script = ExtResource("1_5kmi8")
 
 [node name="Monster1" type="Sprite2D" parent="." unique_id=356222001]
 position = Vector2(1.0001221, 2)
