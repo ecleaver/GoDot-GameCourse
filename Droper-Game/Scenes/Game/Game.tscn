@@ -1,3 +1,33 @@
 [gd_scene format=3 uid="uid://yicge48108e0"]
 
+[ext_resource type="Texture2D" uid="uid://han51riedyr5" path="res://Assets/Background.png" id="1_rdw05"]
+[ext_resource type="Script" uid="uid://s5ckun220l7o" path="res://Scripts/Game.gd" id="1_xbxml"]
+[ext_resource type="PackedScene" uid="uid://dxywco7xxb2cr" path="res://Scenes/Bottle/Bottle.tscn" id="3_ln2h6"]
+
 [node name="Game" type="Node2D" unique_id=1010602869]
+script = ExtResource("1_xbxml")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=830248173]
+position = Vector2(575.50006, 325.25003)
+scale = Vector2(0.29973957, 0.30069444)
+texture = ExtResource("1_rdw05")
+
+[node name="Bottle" parent="." unique_id=2134920280 instance=ExtResource("3_ln2h6")]
+position = Vector2(65, 57)
+scale = Vector2(0.2, 0.22)
+
+[node name="Bottle2" parent="." unique_id=690729868 instance=ExtResource("3_ln2h6")]
+position = Vector2(178, 56)
+scale = Vector2(0.2, 0.22)
+
+[node name="Bottle3" parent="." unique_id=779637563 instance=ExtResource("3_ln2h6")]
+position = Vector2(305, 54)
+scale = Vector2(0.2, 0.22)
+
+[node name="Bottle4" parent="." unique_id=1419454327 instance=ExtResource("3_ln2h6")]
+position = Vector2(433, 56.999996)
+scale = Vector2(0.2, 0.22)
+
+[node name="Bottle5" parent="." unique_id=1460357767 instance=ExtResource("3_ln2h6")]
+position = Vector2(588, 55)
+scale = Vector2(0.2, 0.22)
