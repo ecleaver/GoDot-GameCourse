@@ -1,7 +1,7 @@
 class_name Bottles
 extends Sprite2D
 
-const _SPEED : int = 50
+const _SPEED : int = 80
 const ROTATION_SPEED : int = 45
 var _set_direction : bool = false
 var _rotate_direction  = 1
@@ -32,6 +32,5 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	rotate(PI * delta * _rotate_direction)
-	position.y += 100 * delta
 	pass
 	

@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://dxywco7xxb2cr"]
 
-[ext_resource type="Script" uid="uid://cmbmobnj34mvv" path="res://Scenes/Bottle/Bottle.gd" id="1_bn7jo"]
+[ext_resource type="Script" uid="uid://cmbmobnj34mvv" path="res://Scripts/Bottle.gd" id="1_bn7jo"]
 [ext_resource type="Texture2D" uid="uid://6287q07uipsj" path="res://Assets/Bottles/Bottle 1.png" id="1_fv2e0"]
 [ext_resource type="Script" uid="uid://c2sikruv78qu7" path="res://Scripts/Bottles.gd" id="2_81p8w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bn7jo"]
-size = Vector2(28.57143, 42.857143)
+size = Vector2(42.799995, 42.857143)
 
 [node name="Bottle" type="Area2D" unique_id=2134920280]
 script = ExtResource("1_bn7jo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1561290021]
-position = Vector2(0, 0.50000006)
+position = Vector2(-1, 0.50000006)
 scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_bn7jo")
 
