@@ -10,3 +10,7 @@ script = ExtResource("1_xbxml")
 position = Vector2(575.50006, 325.25003)
 scale = Vector2(0.29973957, 0.30069444)
 texture = ExtResource("1_rdw05")
+
+[node name="Spawn" type="Timer" parent="." unique_id=1532684283]
+
+[connection signal="timeout" from="Spawn" to="." method="_on_dice_timer_timeout"]

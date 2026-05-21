@@ -1,32 +1,28 @@
-#Godot Essentials
+#Godot project Item-Dropper
 
-* The image files each get a import file that has code used by godot with the images.
-* the .godot folder has the media data.
-* github ignores this folder.
 
-* Looking at multiple Scenes
-* A child scene would be the blueprint
-* Node Lifecycle
-  * _init: Initial instance created, variables, methods, etc all defined 
-  * _enter_tree: Instance added into the scene tree
-    *  Used to keep track of other nodes
-  * _ready Instance and all the children added to the tree
-    *  Used to run code on sprit
-  * _exit_tree Instance about to be removed from the tree.
-  * _process 
-    * Called every frame
-  * _physics_process
-    * Used for updating collession and other things
-Signals
-  *  Create a list of actions for the node
-  *  Invokes the functions by going through its list
-  *  To Create a Signal type signal
+Game logic
+  *  Items will fall down the screen
+  *  A score will be displayed to the left
+  *  Its game over when a item pass's the bottom of the screen.
+  *  A character will move back and forth 
+  *  Everytime a object is caught a point is scored.
+  *  The game scene is th main entry point
+  *  A character scene
+  *  A die scene
+  *  Randomly spwaned in.
+  *  Objects spin clockwise of conter clockwise
 
-To create unique inputs
-  1. Go to Project 
-  2. Select Project settings 
-  3. Select input
-  4. Give the action a name
-  5. Click add
-  6. Click +
+Notes:
+  *  To remove a resrouce type queue_free()
+  *  Which option to use
+    * preload()
+      *  At compile time.  When a scene is first loaded, Godot comiles the script, loads any preloads, and compiles their scripts as well
+      * used a const
+      *  Preload loads all upfront, so no potential sutters in the game
+      *  But it could cause longer loading times.
+    * load()
+      * At run time.  When a scene is first loaded, godot compiles the script, but only loads resources when they are first needed in that scne.  
+      *  use a var
+      *  tells we will wait until we use the resource 
   
