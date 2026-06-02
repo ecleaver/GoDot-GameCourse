@@ -7,15 +7,15 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bn7jo"]
 size = Vector2(42.799995, 42.857143)
 
-[node name="Bottle" type="Area2D" unique_id=2134920280]
+[node name="Bottle" type="Area2D" unique_id=2134920280 groups=["stop_falling"]]
 script = ExtResource("1_bn7jo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1561290021]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1561290021 groups=["stop_falling"]]
 position = Vector2(-1, 0.50000006)
 scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_bn7jo")
 
-[node name="Bottles" type="Sprite2D" parent="." unique_id=500752230]
+[node name="Bottles" type="Sprite2D" parent="." unique_id=500752230 groups=["stop_falling"]]
 unique_name_in_owner = true
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_fv2e0")

@@ -2,6 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://han51riedyr5" path="res://Assets/Background.png" id="1_rdw05"]
 [ext_resource type="Script" uid="uid://s5ckun220l7o" path="res://Scripts/Game.gd" id="1_xbxml"]
+[ext_resource type="PackedScene" uid="uid://bwkc0fh7d3ice" path="res://Scenes/Character/Character.tscn" id="3_xbxml"]
+[ext_resource type="FontFile" uid="uid://uua515rj1u43" path="res://Assets/LuckiestGuy-Regular.ttf" id="4_ln2h6"]
+[ext_resource type="AudioStream" uid="uid://ij1r6mym35yi" path="res://Assets/tetris.mp3" id="5_y3kpf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_y3kpf"]
+font = ExtResource("4_ln2h6")
+font_size = 20
+outline_size = 4
+outline_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+shadow_size = 2
+shadow_color = Color(0.11764706, 0.11764706, 0.11764706, 1)
 
 [node name="Game" type="Node2D" unique_id=1010602869]
 script = ExtResource("1_xbxml")
@@ -13,4 +24,22 @@ texture = ExtResource("1_rdw05")
 
 [node name="Spawn" type="Timer" parent="." unique_id=1532684283]
 
+[node name="Character" parent="." unique_id=1026504900 instance=ExtResource("3_xbxml")]
+position = Vector2(325.99997, 495.99997)
+scale = Vector2(0.4, 0.4)
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=17336383]
+offset_left = 34.0
+offset_top = 19.0
+offset_right = 85.0
+offset_bottom = 42.0
+scale = Vector2(2.8100471, 1.6800001)
+text = "0000"
+label_settings = SubResource("LabelSettings_y3kpf")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=485273446]
+stream = ExtResource("5_y3kpf")
+autoplay = true
+
 [connection signal="timeout" from="Spawn" to="." method="_on_dice_timer_timeout"]
+[connection signal="scored_point" from="Character" to="." method="_on_character_scored_point"]
