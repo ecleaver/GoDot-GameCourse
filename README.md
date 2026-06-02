@@ -27,3 +27,22 @@ Notes:
       *  tells we will wait until we use the resource 
   
 
+Groups
+  *  Their are Scene Groups
+  *  Global groups
+  *  Can right click on convert a Scene Group to a Global Group
+
+Pause game:
+  *  Using a for loop:
+    *  Use a group
+    *  Put the group in a array of nodes
+    *  go through the loop
+    *  item.set_physics_process(false)
+
+To retstart:
+  *  get_tree().reload_current_scene()
+
+move character: 
+  * make sure to use is_action_pressed and not is_action_just_pressed
+  * to rotate you can use sprit.flip_h = check if it is less then 0 or greater then 0
+  
