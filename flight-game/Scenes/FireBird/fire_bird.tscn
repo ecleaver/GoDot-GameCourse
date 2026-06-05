@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bbeybc6550r15"]
 
 [ext_resource type="Texture2D" uid="uid://cdabqd7n6r8yd" path="res://Assets/Fire Bird/Firebird_0000.png" id="1_eflpu"]
+[ext_resource type="Script" uid="uid://drsmfconjyu7l" path="res://Scripts/fire_bird.gd" id="1_y7y75"]
 [ext_resource type="Texture2D" uid="uid://pya3ku2ma4vk" path="res://Assets/Fire Bird/Firebird_0001.png" id="2_y7y75"]
 [ext_resource type="Texture2D" uid="uid://byaolnn207h4i" path="res://Assets/Fire Bird/Firebird_0002.png" id="3_xhi8r"]
 
@@ -29,6 +30,7 @@ radius = 23.0
 height = 96.0
 
 [node name="FireBird" type="CharacterBody2D" unique_id=1488798734]
+script = ExtResource("1_y7y75")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1915457397]
 scale = Vector2(0.4, 0.4)

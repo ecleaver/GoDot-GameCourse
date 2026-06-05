@@ -42,6 +42,7 @@ Physics notes:
   * CharacterBody2d - Specialized 2d physics body node for characters moved by script 
   * AnimatableBody2d - Physics body for 2d physics which moves only by script or animation.  Useful for moving platforms or doors.
   * RigidBody2d Physics Body shich is moved by 2d physics simulation.  Useful for Objects that have gravity and can be pushed by other objects.
+* To get the default gravity ProjectSettings.get("physics/2d/default_gravity")
 
 Notes on Physics 2d
   * Interact with other Physics2d nodes (objects)
@@ -56,9 +57,11 @@ CharacterBody2d
   * Velocity
     * A vector2 x and y
     * Dose this by responding to move and slid
-    
-
-
+  * Move and slid
+    * move_and_slide()
+    * https://docs.godotengine.org/en/stable/tutorials/physics/physics_introduction.html#move-and-slide
+    * only gravity/acceleration needs to scaled by delta
+    * speed only needs to be added to velocity
 
 Note on Area 2d
   *  Not a physics node - It has a collison shape that detects when other collision shapes are overlaped

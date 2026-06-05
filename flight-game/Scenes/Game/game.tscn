@@ -1,8 +1,14 @@
 [gd_scene format=3 uid="uid://cd74pa2tprjig"]
 
 [ext_resource type="PackedScene" uid="uid://bbeybc6550r15" path="res://Scenes/FireBird/fire_bird.tscn" id="1_mv0hc"]
+[ext_resource type="Texture2D" uid="uid://doorqla663ss4" path="res://Assets/Background/Back ground.png" id="1_qxfds"]
 
 [node name="Game" type="Node" unique_id=392006133]
+
+[node name="BackGround" type="Sprite2D" parent="." unique_id=957985496]
+position = Vector2(236, 421)
+scale = Vector2(0.24055842, 0.22420153)
+texture = ExtResource("1_qxfds")
 
 [node name="FireBird" parent="." unique_id=1488798734 instance=ExtResource("1_mv0hc")]
 position = Vector2(45, 520)
