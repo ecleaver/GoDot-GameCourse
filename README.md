@@ -42,5 +42,25 @@ Physics notes:
   * CharacterBody2d - Specialized 2d physics body node for characters moved by script 
   * AnimatableBody2d - Physics body for 2d physics which moves only by script or animation.  Useful for moving platforms or doors.
   * RigidBody2d Physics Body shich is moved by 2d physics simulation.  Useful for Objects that have gravity and can be pushed by other objects.
-  
 
+Notes on Physics 2d
+  * Interact with other Physics2d nodes (objects)
+  * We do not control the position, the physics engine dose this for us
+  * We supply the engine with a velocity/force
+  * The physics engine calculates where we go and what our speed/position is
+  * With the Physics node - It has a collison shpae that is used to interact with other collisions shapes
+  * Used when you want aa physics interaction
+
+CharacterBody2d
+  * https://docs.godotengine.org/en/stable/classes/class_characterbody2d.html
+  * Velocity
+    * A vector2 x and y
+    * Dose this by responding to move and slid
+    
+
+
+
+Note on Area 2d
+  *  Not a physics node - It has a collison shape that detects when other collision shapes are overlaped
+  *  No physics calculation or compluation
+  *  Takes less processing power on the computer.

@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://cd74pa2tprjig"]
 
+[ext_resource type="PackedScene" uid="uid://bbeybc6550r15" path="res://Scenes/FireBird/fire_bird.tscn" id="1_mv0hc"]
+
 [node name="Game" type="Node" unique_id=392006133]
+
+[node name="FireBird" parent="." unique_id=1488798734 instance=ExtResource("1_mv0hc")]
+position = Vector2(45, 520)
