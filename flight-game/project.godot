@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="Flight_Game"
+run/main_scene="res://Scenes/Game/game.tscn"
 config/features=PackedStringArray("4.6", "Mobile")
-config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=480
+window/size/viewport_height=840
+window/stretch/mode="canvas_items"
 
 [physics]
 
