@@ -1,2 +1,1 @@
-#Godot project Fligt game
-
+#Godot project Flight Game
