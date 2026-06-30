@@ -12,6 +12,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		_fly = true
 	pass    
 
+func _stop_flight(stopped : bool):
+	$AnimatedSprite2D.stop()
+	set_physics_process(stopped)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -24,4 +27,8 @@ func _physics_process(delta: float) -> void:
 		_fly = false
 		   
 	move_and_slide()    
+	if is_on_floor():
+		_stop_flight(true)
+	elif is_on_ceiling():
+		print("On Ceiling")
 	pass

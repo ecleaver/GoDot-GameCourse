@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c2xksvq7y84nm"]
+
+[ext_resource type="Texture2D" uid="uid://bf3y55notkqpm" path="res://Assets/obstacles/Object 2.png" id="1_0u7on"]
+
+[node name="Area2D" type="Area2D" unique_id=938204831]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1880619297]
+position = Vector2(40, 104)
+scale = Vector2(0.09201387, 0.09201387)
+texture = ExtResource("1_0u7on")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=187501672]
+position = Vector2(32, 2)
+scale = Vector2(0.09201387, 0.09201387)
+polygon = PackedVector2Array(-32.60376, 0, 43.47168, 0, 249.96228, 456.45288, 249.96228, 662.9435, 108.67932, 891.1699, 358.6416, 1814.9437, 173.88684, 2390.9438, 86.94348, 3010.4155, -184.75476, 3021.2837, -195.62268, 2380.0757, -304.30194, 1597.5851, -76.0755, 815.09436, -282.5661, 434.71692)
