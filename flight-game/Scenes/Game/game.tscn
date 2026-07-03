@@ -47,5 +47,4 @@ autostart = true
 
 [node name="GameUI" parent="CanvasLayer" unique_id=1542800588 instance=ExtResource("5_ciybh")]
 
-[connection signal="on_plane_died" from="FireBird" to="." method="_on_fire_bird_on_plane_died"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

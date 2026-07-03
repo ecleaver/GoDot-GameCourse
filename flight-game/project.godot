@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.6", "Mobile")
 [autoload]
 
 GameManger="*uid://l1xn17mcfm8o"
+SignalHub="*uid://cftx4pt3nulpy"
 
 [display]
 
