@@ -11,8 +11,12 @@ config_version=5
 [application]
 
 config/name="Flight_Game"
-run/main_scene="res://Scenes/Game/game.tscn"
+run/main_scene="uid://bgutlqblwvmv7"
 config/features=PackedStringArray("4.6", "Mobile")
+
+[autoload]
+
+GameManger="*uid://l1xn17mcfm8o"
 
 [display]
 
@@ -28,9 +32,15 @@ power={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Barrier"
+2d_physics/layer_2="Firebird"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
+2d/default_gravity=2500.0
 
 [rendering]
 

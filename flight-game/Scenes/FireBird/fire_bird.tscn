@@ -30,6 +30,7 @@ radius = 23.0
 height = 96.0
 
 [node name="FireBird" type="CharacterBody2D" unique_id=1488798734]
+collision_layer = 2
 script = ExtResource("1_y7y75")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1915457397]

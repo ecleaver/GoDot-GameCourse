@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bgutlqblwvmv7"]
+
+[ext_resource type="Texture2D" uid="uid://os6dajja7mo3" path="res://Assets/Menu/Menu background.png" id="1_cqskg"]
+[ext_resource type="Script" uid="uid://on4271vksvkw" path="res://Scripts/menu.gd" id="1_n2mnh"]
+[ext_resource type="LabelSettings" uid="uid://bbwqimkjusdh5" path="res://Fonts/Title96.tres" id="2_8inha"]
+[ext_resource type="LabelSettings" uid="uid://cl40ak7vdwoe5" path="res://Fonts/StartButton50.tres" id="3_n2mnh"]
+[ext_resource type="LabelSettings" uid="uid://f6h0gohtb3df" path="res://Fonts/ScoreLabel20.tres" id="4_x5f3s"]
+[ext_resource type="AudioStream" uid="uid://bedwanqli6qfg" path="res://Assets/audio/bgm_menu.mp3" id="5_uwxxs"]
+
+[node name="Menu" type="Control" unique_id=1031934157]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 480.0
+offset_bottom = 840.0
+script = ExtResource("1_n2mnh")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=309849847]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_cqskg")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=546474906]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 60
+
+[node name="Title" type="Label" parent="MarginContainer" unique_id=498314601]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Fire Bird"
+label_settings = ExtResource("2_8inha")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Start button" type="Label" parent="MarginContainer" unique_id=1249510275]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Start Game by 
+pressing space"
+label_settings = ExtResource("3_n2mnh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hightscore" type="Label" parent="MarginContainer" unique_id=731696918]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "High Score"
+label_settings = ExtResource("4_x5f3s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Points" type="Label" parent="MarginContainer" unique_id=117121928]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "0"
+label_settings = ExtResource("4_x5f3s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=2132629867]
+stream = ExtResource("5_uwxxs")
+autoplay = true
+parameters/looping = true

@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://cd74pa2tprjig"]
 
+[ext_resource type="Script" uid="uid://bbbmtskkvkmsj" path="res://Scripts/game.gd" id="1_i1e5p"]
 [ext_resource type="PackedScene" uid="uid://bbeybc6550r15" path="res://Scenes/FireBird/fire_bird.tscn" id="1_mv0hc"]
 [ext_resource type="Texture2D" uid="uid://doorqla663ss4" path="res://Assets/Background/Back ground.png" id="1_qxfds"]
 [ext_resource type="PackedScene" uid="uid://xtq8athhcxs1" path="res://Scenes/Barrier/barrier.tscn" id="3_qikps"]
+[ext_resource type="PackedScene" uid="uid://bbx57f4ruw74w" path="res://Scenes/GameUI/game_ui.tscn" id="5_ciybh"]
 
 [node name="Game" type="Node" unique_id=392006133]
+script = ExtResource("1_i1e5p")
 
 [node name="BackGround" type="Sprite2D" parent="." unique_id=957985496]
 position = Vector2(236, 421)
@@ -17,3 +20,23 @@ position = Vector2(45, 434)
 [node name="Barrier" parent="." unique_id=1443761699 instance=ExtResource("3_qikps")]
 position = Vector2(-2.3841858e-07, -2.2888184e-05)
 scale = Vector2(1.08, 1.003)
+
+[node name="Spikes holder" type="Node2D" parent="." unique_id=1633050213]
+position = Vector2(-2.3841858e-07, -2.2888184e-05)
+scale = Vector2(1.08, 1.003)
+
+[node name="UpperSpawn" type="Marker2D" parent="." unique_id=2077722320]
+position = Vector2(517, -128.00002)
+scale = Vector2(1.08, 1.003)
+
+[node name="LowerSpawn" type="Marker2D" parent="." unique_id=1048127778]
+position = Vector2(521, 136.00002)
+scale = Vector2(1.08, 1.003)
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1993031888]
+wait_time = 2.0
+autostart = true
+
+[node name="GameUI" parent="." unique_id=1542800588 instance=ExtResource("5_ciybh")]
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

@@ -67,3 +67,31 @@ Note on Area 2d
   *  Not a physics node - It has a collison shape that detects when other collision shapes are overlaped
   *  No physics calculation or compluation
   *  Takes less processing power on the computer.
+
+StaticBody 2d
+  * Physics body for 2d physics which is static or moves only by script.  Usful for floors and walls 
+
+Menu/UI notes
+  * Presenting Nodes 
+    * Display Something
+    * TexutreRect
+    * Label 
+  * Containers
+    * Control the layout of the children
+    * Margin Container 
+    * HBox Container
+  * Let the UI control things
+  * Like programing web pages
+
+
+
+Canvas Items 
+  * Canvas items are drawn onto a 2d canvas(surface)
+  * They are draw in a screenspace or world space
+
+  * Node2d
+    * World space the whole world beyound the camera
+    * Camera moves around
+  * Control Nodes
+    * Screen space - the view port
+    * Anchoring and position

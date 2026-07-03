@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://b1olmx46hfs21" path="res://Assets/obstacles/Object 1.png" id="1_w084e"]
 
 [node name="Spike" type="Area2D" unique_id=1421314499]
+collision_layer = 0
+collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1980204233]
 position = Vector2(-71, -81.99999)
