@@ -5,6 +5,8 @@ var _fly : bool = false
 const FLIGHT : float = -550
 var _gravity : float = ProjectSettings.get("physics/2d/default_gravity")
 
+signal on_plane_died
+
 # Called when the node enters the     scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -18,6 +20,7 @@ func _stop_flight(stopped : bool):
 	#$AnimatedSprite2D.stop()
 	#set_physics_process(stopped)
 	get_tree().paused = true
+	on_plane_died.emit()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:

@@ -3,7 +3,7 @@ extends Node
 @onready var upper_spawn: Marker2D = $UpperSpawn
 @onready var lower_spawn: Marker2D = $LowerSpawn
 const OBJECTS = preload("uid://bkplp8mj7ppon")
-
+@onready var game_ui: GameUI = $CanvasLayer/GameUI
 
 
 # Called when the node enters the scene tree for the first time.
@@ -33,3 +33,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		GameManger.load_main_scene()
 		pass
+
+
+func _on_fire_bird_on_plane_died() -> void:
+	game_ui.on_plane_died()
+	pass # Replace with function body.
