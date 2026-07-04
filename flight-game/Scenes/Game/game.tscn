@@ -2,23 +2,15 @@
 
 [ext_resource type="Script" uid="uid://bbbmtskkvkmsj" path="res://Scripts/game.gd" id="1_i1e5p"]
 [ext_resource type="PackedScene" uid="uid://bbeybc6550r15" path="res://Scenes/FireBird/fire_bird.tscn" id="1_mv0hc"]
-[ext_resource type="Texture2D" uid="uid://doorqla663ss4" path="res://Assets/Background/Back ground.png" id="1_qxfds"]
-[ext_resource type="Texture2D" uid="uid://n6wsh1h7aeau" path="res://Assets/Background/Rocks 1.png" id="3_flgk0"]
+[ext_resource type="PackedScene" uid="uid://bwap7c820gh43" path="res://Scenes/ScrollingBG/scrolling_bg.tscn" id="2_ciybh"]
 [ext_resource type="PackedScene" uid="uid://xtq8athhcxs1" path="res://Scenes/Barrier/barrier.tscn" id="3_qikps"]
 [ext_resource type="PackedScene" uid="uid://bbx57f4ruw74w" path="res://Scenes/GameUI/game_ui.tscn" id="5_ciybh"]
 
 [node name="Game" type="Node" unique_id=392006133]
 script = ExtResource("1_i1e5p")
 
-[node name="BackGround" type="Sprite2D" parent="." unique_id=957985496]
-position = Vector2(236, 421)
-scale = Vector2(0.24055842, 0.22420153)
-texture = ExtResource("1_qxfds")
-
-[node name="Mounts" type="Sprite2D" parent="." unique_id=319605259]
-position = Vector2(668, 511)
-scale = Vector2(-0.347193, 0.3070402)
-texture = ExtResource("3_flgk0")
+[node name="ScrollingBG" parent="." unique_id=1976074034 instance=ExtResource("2_ciybh")]
+position = Vector2(-1, 0)
 
 [node name="FireBird" parent="." unique_id=1488798734 instance=ExtResource("1_mv0hc")]
 position = Vector2(45, 434)
@@ -44,6 +36,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=770255908]
+process_mode = 3
 
 [node name="GameUI" parent="CanvasLayer" unique_id=1542800588 instance=ExtResource("5_ciybh")]
 

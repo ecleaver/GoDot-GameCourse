@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://drsmfconjyu7l" path="res://Scripts/fire_bird.gd" id="1_y7y75"]
 [ext_resource type="Texture2D" uid="uid://pya3ku2ma4vk" path="res://Assets/Fire Bird/Firebird_0001.png" id="2_y7y75"]
 [ext_resource type="Texture2D" uid="uid://byaolnn207h4i" path="res://Assets/Fire Bird/Firebird_0002.png" id="3_xhi8r"]
+[ext_resource type="AudioStream" uid="uid://bkxsqkghtb10v" path="res://Assets/audio/flapping.mp3" id="5_xhi8r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gxi3h"]
 animations = [{
@@ -85,3 +86,7 @@ shape = SubResource("CapsuleShape2D_eflpu")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1353411772]
 root_node = NodePath("../CollisionShape2D")
 libraries/ = SubResource("AnimationLibrary_gxi3h")
+
+[node name="FlappingSound" type="AudioStreamPlayer" parent="." unique_id=847876216]
+stream = ExtResource("5_xhi8r")
+autoplay = true

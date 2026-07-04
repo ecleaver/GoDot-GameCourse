@@ -95,3 +95,29 @@ Canvas Items
   * Control Nodes
     * Screen space - the view port
     * Anchoring and position
+
+  Singleton pattern
+    *  A singleton is a single instance of a class and you can only have one of those instances 
+
+  No Circular Reference
+    *  When main is preloaded the main.gd contains n refereneces to the game.gd
+    *  When game is preloaded the game.gd contains no references to main.gd
+  
+ 
+  This approch becomes a problem in bigger applications. 
+    * Signal/event or Hub/BUS design pattern resolves the issue
+    * Break it between subscribers and emitors
+    
+  GameOver
+    * When the plane dies we show the GaveOverLabel
+      *  Use show
+      *  visible, hide()
+    * After some time hde the game over label and show the Press Space Label 
+    * Allow the power action to return to the main menu Only once the PressSpaceLable is visible
+    * Play the game over sound!(sound.play)
+
+  Scoring!
+    *  The GameUi will keep track ofthe score
+    *  A a var _points to the gameUI
+    *  Each time we exit, score a point
+    *  Hint on_point_scored should be added to the Signal Hub

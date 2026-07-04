@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bbx57f4ruw74w"]
 
-[ext_resource type="Script" uid="uid://cf78m754mc5e7" path="res://Scenes/GameUI/game_ui.gd" id="1_mjubw"]
+[ext_resource type="Script" uid="uid://cf78m754mc5e7" path="res://Scripts/game_ui.gd" id="1_mjubw"]
 [ext_resource type="LabelSettings" uid="uid://cl40ak7vdwoe5" path="res://Fonts/StartButton50.tres" id="1_s3w5c"]
+[ext_resource type="AudioStream" uid="uid://m5o4fbkvbna2" path="res://Assets/audio/gameover.mp3" id="3_smc31"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mjubw"]
 font_size = 60
@@ -59,3 +60,9 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Press Space"
 label_settings = SubResource("LabelSettings_smc31")
+
+[node name="GameOver" type="AudioStreamPlayer" parent="." unique_id=368908426]
+stream = ExtResource("3_smc31")
+
+[node name="Timer" type="Timer" parent="." unique_id=1908520610]
+wait_time = 2.0

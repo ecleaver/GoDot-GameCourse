@@ -28,11 +28,5 @@ func _on_spawn_timer_timeout() -> void:
 	_spawn_spike()
 	pass # Replace with function body.
 	
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
-		GameManger.load_main_scene()
-		pass
-
-
 func _on_fire_bird_on_plane_died() -> void:
 	pass # Replace with function body.
