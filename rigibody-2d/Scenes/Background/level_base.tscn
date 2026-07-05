@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://dl18kok8jdr17"]
 
+[ext_resource type="Texture2D" uid="uid://cp3slwfr52upc" path="res://Assets/Backgrounds/Level Background.png" id="1_dq6w3"]
+
 [node name="LevelBase" type="Node" unique_id=734545460]
 
 [node name="Background2d" type="Sprite2D" parent="." unique_id=2056300623]
+position = Vector2(579, 328)
+texture = ExtResource("1_dq6w3")
