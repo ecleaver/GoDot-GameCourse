@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bh4cegqhusvxm"]
+
+[ext_resource type="Texture2D" uid="uid://dx16lwm64h081" path="res://Assets/env/carboard/carboard2.png" id="1_pymjm"]
+[ext_resource type="Texture2D" uid="uid://cb112qj1xf1sp" path="res://Assets/player/Cat.png" id="2_1ofc7"]
+[ext_resource type="Script" uid="uid://vcpae4e2i4xj" path="res://Scenes/TestRB/cat.gd" id="2_6uhxf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spbhj"]
+size = Vector2(1164, 24)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pymjm"]
+bounce = 0.38
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_spbhj"]
+radius = 40.0
+
+[node name="TestRB" type="Node" unique_id=870540804]
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=953720517]
+position = Vector2(0, 632)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=926831811]
+position = Vector2(572, 2)
+shape = SubResource("RectangleShape2D_spbhj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor" unique_id=1568713972]
+position = Vector2(574.5, 0)
+scale = Vector2(5.7136364, 1)
+texture = ExtResource("1_pymjm")
+
+[node name="Cat" type="RigidBody2D" parent="." unique_id=729606461]
+position = Vector2(556, 690)
+physics_material_override = SubResource("PhysicsMaterial_pymjm")
+freeze = true
+script = ExtResource("2_6uhxf")
+
+[node name="Sprite2D" type="Sprite2D" parent="Cat" unique_id=732383364]
+position = Vector2(0, -626)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_1ofc7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cat" unique_id=203021291]
+position = Vector2(1, -627)
+scale = Vector2(0.9200012, 0.95999956)
+shape = SubResource("CircleShape2D_spbhj")
+
+[node name="Label" type="Label" parent="Cat" unique_id=948516335]
+offset_top = -684.0
+offset_right = 40.0
+offset_bottom = -661.0
