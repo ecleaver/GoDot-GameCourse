@@ -29,8 +29,11 @@ texture = ExtResource("1_pymjm")
 
 [node name="Cat" type="RigidBody2D" parent="." unique_id=729606461]
 position = Vector2(556, 690)
+input_pickable = true
 physics_material_override = SubResource("PhysicsMaterial_pymjm")
 freeze = true
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("2_6uhxf")
 
 [node name="Sprite2D" type="Sprite2D" parent="Cat" unique_id=732383364]
@@ -47,3 +50,21 @@ shape = SubResource("CircleShape2D_spbhj")
 offset_top = -684.0
 offset_right = 40.0
 offset_bottom = -661.0
+
+[node name="Cat2" type="RigidBody2D" parent="." unique_id=399030377]
+position = Vector2(568, 887)
+physics_material_override = SubResource("PhysicsMaterial_pymjm")
+contact_monitor = true
+max_contacts_reported = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Cat2" unique_id=1164377185]
+position = Vector2(0, -626)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_1ofc7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cat2" unique_id=1560276804]
+position = Vector2(1, -627)
+scale = Vector2(0.9200012, 0.95999956)
+shape = SubResource("CircleShape2D_spbhj")
+
+[connection signal="input_event" from="Cat" to="Cat" method="_on_input_event"]

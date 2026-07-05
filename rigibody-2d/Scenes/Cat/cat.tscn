@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://b6ese0egpxuk5"]
+
+[node name="Cat" type="RigidBody2D" unique_id=931702650]
