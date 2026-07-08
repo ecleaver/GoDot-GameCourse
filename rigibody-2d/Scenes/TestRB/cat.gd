@@ -1,5 +1,6 @@
 extends RigidBody2D
 @onready var label: Label = $Label
+@onready var cat: Cat = $"."
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action("ui_down"):
@@ -8,11 +9,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	label.text = "Freeze:%s\nContactCount:%d\nSleeping%s" %[
-		freeze, 
-		get_contact_count(),
-		sleeping
-	]
+	label.text = Test.test_phyiscs(get_contact_count(), freeze, sleeping)
 	pass
 
 
