@@ -14,7 +14,7 @@ offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("1_1r6ip")
 
-[node name="MarginContainer" type="MarginContainer" parent="TextureRect" unique_id=1021732353]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1021732353]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0

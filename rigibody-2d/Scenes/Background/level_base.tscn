@@ -9,5 +9,5 @@
 position = Vector2(579, 328)
 texture = ExtResource("1_dq6w3")
 
-[node name="Cat" parent="Background2d" unique_id=931702650 instance=ExtResource("2_mphqb")]
-position = Vector2(-453, -29)
+[node name="Cat" parent="." unique_id=931702650 instance=ExtResource("2_mphqb")]
+position = Vector2(126, 299)

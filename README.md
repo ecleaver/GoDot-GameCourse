@@ -30,4 +30,31 @@ Instructions:
 RigidBody2d
   *  Implements full 2d physics.  It is unable to be controlled directly, instead you must apply forces to it (gravity, impulses, etc), and the physics simulation will calculate the resulting movement, rotation, react to collisions, and affect other physics bodies in its path.
   *  You apply a force or impulse and the physics engine dose the reset.  
+  *  https://docs.godotengine.org/en/stable/classes/class_rigidbody2d.html
+
+Animal Scene
+  * Drag Action
+  * Arrow Rotates with Drag
+  * Arrow grows when draged
+  * Impulse on release 
+
+Animal Scene Challenge
+  * Create a RigidBody2d Called Animal
+  * It needs to be detect input and have a contact monitoring on
+  * Add the png to the Sprite 2d, scale to 0.15
+  * Also, we will add a Label for debugging
+  * Add 3 x Audio Stream Player2d
+  * Add to the levelbase and let it fall
+  * Then set it to freeze
+  
+Animal logic
+  * Wait for a Click
+  * Dragging
+  * then letting go
+
+Dragging 
+  * have a drag start that is a vector
+  * have a start
+  * Get a dragged vector
+  * get a position vector 
   

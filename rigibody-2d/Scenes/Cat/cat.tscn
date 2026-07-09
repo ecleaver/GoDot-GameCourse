@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://b6ese0egpxuk5"]
 
 [ext_resource type="Texture2D" uid="uid://cb112qj1xf1sp" path="res://Assets/player/Cat.png" id="1_3q6nn"]
-[ext_resource type="Script" uid="uid://7xpvp0ho7a3h" path="res://Scenes/Cat/cat.gd" id="1_i0txa"]
+[ext_resource type="Script" uid="uid://7xpvp0ho7a3h" path="res://Scripts/cat.gd" id="1_i0txa"]
 [ext_resource type="AudioStream" uid="uid://bfk8rbvl7ludl" path="res://Assets/audio/kick_wood.ogg" id="2_dpdie"]
 [ext_resource type="AudioStream" uid="uid://cdadpefg3ft6i" path="res://Assets/audio/catapult.ogg" id="3_i0txa"]
 [ext_resource type="AudioStream" uid="uid://c27x36o6l2f5w" path="res://Assets/audio/stretch2.ogg" id="4_kvel3"]
+[ext_resource type="Texture2D" uid="uid://cdofj4utw5vil" path="res://Assets/arrow/arrow.png" id="6_kvel3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_soqr3"]
 radius = 19.026299
@@ -15,15 +16,7 @@ freeze = true
 contact_monitor = true
 script = ExtResource("1_i0txa")
 
-[node name="Debugging Label" type="Label" parent="." unique_id=2115755553]
-top_level = true
-offset_right = 40.0
-offset_bottom = 23.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_constants/outline_size = 6
-
-[node name="CatSprit" type="Sprite2D" parent="." unique_id=1880768459]
+[node name="CatSprite" type="Sprite2D" parent="." unique_id=1880768459]
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("1_3q6nn")
 
@@ -39,3 +32,34 @@ stream = ExtResource("3_i0txa")
 
 [node name="StretchSound" type="AudioStreamPlayer2D" parent="." unique_id=1530572187]
 stream = ExtResource("4_kvel3")
+
+[node name="ArrowSprite" type="Sprite2D" parent="." unique_id=837738524]
+unique_name_in_owner = true
+position = Vector2(47, -1.0000038)
+rotation = 0.7345807
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_kvel3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=768550841]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1828157869]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Debugging Label" type="Label" parent="CanvasLayer/MarginContainer" unique_id=2115755553]
+unique_name_in_owner = true
+top_level = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/outline_size = 6
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
